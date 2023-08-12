@@ -4,77 +4,91 @@
 <head>
     <title>Cart Form</title>
     <style>
+
+       
         body {
-          font-family: Arial, sans-serif;
-          margin: 20px;
+            font-family: Arial, sans-serif;
+            margin: 40px;
         }
-    
+
         form {
-          display: flex;
-          flex-direction: column;
-          max-width: 300px;
-          margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin-bottom: 20px;
         }
-    
+
         label {
-          font-weight: bold;
-          margin-bottom: 5px;
+            font-weight: bold;
+            margin-bottom: 5px;
         }
-    
+
         input[type="text"] {
-          padding: 8px;
-          margin-bottom: 10px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        }
-    
-        button[type="submit"] {
-          padding: 8px 12px;
-          background-color: #4CAF50;
-          color: #fff;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-    
-        button[type="submit"]:hover {
-          background-color: #45a049;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
+        button[type="submit"],
         #showButton {
-          padding: 8px 12px;
-          background-color: #4CAF50;
-          color: #fff;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-    
-        #showButton:hover {
-          background-color: #45a049;
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
 
-        #cartItems > li {
+        
+        #showButton:hover {
+            background-color: #45a049;
+        }
+
+        #cartItems>li {
             border-style: dashed;
             margin-bottom: 10px;
             border-width: 3px;
-            border-color: #4CAF50;
+            border-color: #45a049;
             font-size: 10pt;
             width: 175px;
-            padding-top: 7px;
-            padding-left: 7px;
-            padding-bottom: 7px;
-            padding-right: 7px;
+            padding: 7px;
             border-radius: 4px;
         }
-      </style>
+
+        /* ... Your existing styles ... */
+
+    h1 {
+        animation: titleAnimation 2s infinite;
+    }
+
+    @keyframes titleAnimation {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+
+    
+    
+ 
+    </style>
 </head>
 
 <body>
-    <img src="data:image/png;base64,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" alt="">
-    <h1>Cart Form</h1>
 
+    <h1>Cart Form</h1>
+    <div id="centerContainer">
+        
+            
+            <img  src="data:image/png;base64,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">
+        
+    
+        
     <!-- Add Item Form -->
+
     <h2>Add Item</h2>
     <form id="addForm" action="/cart/add" method="POST">
         <input type="text" name="cartItem" placeholder="Item name" value="" required>
@@ -96,6 +110,8 @@
     <!-- Display Cart Items -->
     <h2>Cart Items</h2>
     <ul id="cartItems"></ul>
+
+    </div>
 
     <script>
         // Handle form submissions
@@ -128,7 +144,7 @@
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ 'cartItem' : item, 'itemQty' : qty })
+                body: JSON.stringify({ 'cartItem': item, 'itemQty': qty })
             })
                 .then(response => response.json())
                 .then(data => {
@@ -157,7 +173,7 @@
                 });
         }
 
-        // Function to show the cart items
+        // Function to shnmpow the cart items
         function showItems() {
             fetch('/cart/show')
                 .then(response => response.json())
@@ -166,9 +182,8 @@
                     const cartItemsElement = document.getElementById('cartItems');
                     cartItemsElement.innerHTML = '';
                     data.forEach(item => {
-                        console.log()
                         const li = document.createElement('li');
-                        li.textContent = '#'+item.id+' '+item.item_name+' '+item.item_quantity;
+                        li.textContent = `#${item.id} ${item.item_name} ${item.item_quantity}`;
                         cartItemsElement.appendChild(li);
                     });
                 })
